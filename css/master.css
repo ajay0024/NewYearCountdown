@@ -1,0 +1,134 @@
+:root{
+  --GrayishBlue--: hsl(237, 18%, 59%);
+  --SoftRed--: hsl(345, 95%, 68%);
+  --White--: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue--: hsl(236, 21%, 26%);
+  --Very-dark-blue--: hsl(235, 16%, 14%);
+  --Mostly-black-blue--: hsl(234, 17%, 12%);
+  --temp--:hsl(266, 19%, 15%);
+  --upper-box--:hsl(240, 22%, 20%);
+  --border-radius--:0.5rem;
+  --width--:130px;
+  --circle-radius--:10px;
+}
+body{
+  font-family: 'Red Hat Text', sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  background-image: linear-gradient(to bottom left, var(--Mostly-black-blue--),var(--temp--));
+  letter-spacing: 0.4rem;
+}
+.container{
+  background-image: url("../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  color: var(--White--);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  /* justify-content: center; */
+  margin: auto auto;
+  min-height: 100vh;
+}
+.title{
+  font-size: 1.25rem;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+}
+.labels{
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.75rem;
+  color:var(--GrayishBlue--);
+  text-align: center;
+}
+.boxes{
+  color:var(--SoftRed--);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap:2rem;
+}
+.time-column{
+  display: flex;;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cal-container{
+  position:relative;
+  width: var(--width--);
+  height: var(--width--);
+  border-radius: var(--border-radius--);
+  box-shadow: 0 0.65rem 2px 0 var(--Mostly-black-blue--);
+}
+
+.cal-container::before, .cal-container::after{
+  position: absolute;
+  content: '';
+  width: var(--circle-radius--);
+  height: var(--circle-radius--);
+  top: calc(50% - var(--circle-radius--) / 2);
+  left:calc(-1 * var(--circle-radius--) / 2);
+  background:var(--Mostly-black-blue--);
+  border-radius: 50%;
+  z-index:2;
+}
+.cal-container::after{
+  right:-6px;
+  left: auto;
+}
+
+.cal-box{
+  width: var(--width--);
+  height: var(--width--);
+  position: absolute;
+  text-align:center;
+  vertical-align:middle;
+  line-height:var(--width--);
+  font-size: 4rem;
+
+}
+.cal-container > .top{
+  background: var(--upper-box--);
+  border-radius: var(--border-radius--);
+  clip-path: inset(50% 0 100%);
+
+}
+.cal-container > .bottom{
+  background-color: var(--Dark-desaturated-blue--);
+  border-radius: var(--border-radius--);
+  clip-path: inset(50% 100% 0 100%);
+}
+
+.cal-container > .old.top{
+  transform-origin: top;
+}
+.cal-container > .old{
+  z-index:1
+}
+
+/* Initially top part of Bottom Card (New Card) needs to be scaled to 0 to animate it to scale up later*/
+.cal-container > .new.top{
+  transform: scaleY(0);
+}
+/* Scale Bottom part of Top card to 0 slowly*/
+.cal-container > .anim-old-bottom{
+  transform: scaleY(0);
+  transition-property: transform;
+  transition-duration: 0.4s;
+}
+/* Clip Top part of Top card to 0 slowly*/
+.cal-container > .anim-old-top{
+  clip-path: inset(0 0 100% 0);
+  transition-property: clip-path;
+  transition-duration: 0.4s;
+}
+/* Scale Top part of Bottom(New) card to 100% slowly*/
+.cal-container > .anim-new-top{
+  transform: scaleY(1) !important;
+  transition-property: transform;
+  transition-duration: 0.4s;
+}

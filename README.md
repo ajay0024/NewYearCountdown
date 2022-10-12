@@ -15,9 +15,9 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
  This is a Counter showing time for New Year in local time.
 
 ## Screenshot
-![](./ss/s-d.png)
+![Desktop Screenshot](/ss/s-d.png)
 
-![](./ss/s-m.png)
+![Mobile Screenshot](/ss/s-m.png)
 
 ### Links
 

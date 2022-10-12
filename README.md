@@ -15,9 +15,10 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
  This is a Counter showing time for New Year in local time.
 
 ## Screenshot
-![Desktop Screenshot](/ss/s-d.png)
-
-![Mobile Screenshot](/ss/s-m.png)
+**Desktop Design
+![Desktop Screenshot](https://ajay0024.github.io/NewYearCountdown/ss/s-d.png)
+Mobile Design**                                                          
+![Mobile Screenshot](https://ajay0024.github.io/NewYearCountdown/ss/s-m.png)
 
 ### Links
 

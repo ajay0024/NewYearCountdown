@@ -10,14 +10,17 @@
   <title>Launch countdown timer</title>
  <link rel="stylesheet" href="css/master.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="js/master.js" charset="utf-8"></script>
+  <script src="js/master.js"></script>
+
 </head>
 <body>
   <div class="container">
-    <p class="title">
-      We're launching soon
-    </p>
-    <div class="counter">
+    <header role="banner">
+      <h1 class="title">
+        We're launching soon
+      </h1>
+    </header>
+    <main class="counter" role="main">
       <div class="boxes">
         <div class="time-column">
           <div class="cal-container" data-period="days"> <p>Days</p></div>
@@ -37,8 +40,8 @@
           <p class="labels">Seconds</p>
         </div>
       </div>
-    </div>
-    <footer>
+    </main>
+    <footer role="link">
       <img src="images/icon-facebook.svg" alt="">
       <img src="images/icon-pinterest.svg" alt="">
       <img src="images/icon-instagram.svg" alt="">
